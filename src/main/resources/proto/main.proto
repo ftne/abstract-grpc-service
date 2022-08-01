@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.ftne.absys.grpc;
+
+option java_multiple_files = true;
+
+service AbstractGrpcService {
+  rpc getData (GetDataRequest) returns (GetDataResponse) {}
+}
+
+message GetDataRequest {
+  string name = 1;
+}
+
+message GetDataResponse {
+  string message = 1;
+}
