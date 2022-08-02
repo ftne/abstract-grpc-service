@@ -5,13 +5,13 @@ package com.ftne.absys.grpc;
 option java_multiple_files = true;
 
 service AbstractGrpcService {
-  rpc getData (GetDataRequest) returns (GetDataResponse) {}
+  rpc hello (HelloRequest) returns (HelloResponse) {}
 }
 
-message GetDataRequest {
+message HelloRequest {
   string name = 1;
 }
 
-message GetDataResponse {
+message HelloResponse {
   string message = 1;
 }
