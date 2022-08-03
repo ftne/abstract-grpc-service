@@ -35,7 +35,7 @@ dependencies {
     implementation("io.grpc:grpc-netty:" + Version.GRPC)
     implementation("io.grpc:grpc-protobuf:" + Version.GRPC)
     implementation("io.grpc:grpc-stub:" + Version.GRPC)
-    implementation("io.grpc:grpc-kotlin-stub:1.3.0")
+    implementation("io.grpc:grpc-kotlin-stub:" + Version.GRPC_KT_STUB)
     implementation("com.google.protobuf:protobuf-kotlin:" + Version.PROTOBUF)
     implementation("com.google.protobuf:protobuf-java:" + Version.PROTOBUF)
     testImplementation(kotlin("test"))
@@ -52,7 +52,7 @@ protobuf {
             artifact = "io.grpc:protoc-gen-grpc-java:${Version.GRPC}"
         }
         id("grpckt") {
-            artifact = "io.grpc:protoc-gen-grpc-kotlin:1.3.0:jdk8@jar"
+            artifact = "io.grpc:protoc-gen-grpc-kotlin:${Version.GRPC_KT_STUB}:jdk8@jar"
         }
     }
     generateProtoTasks {
@@ -94,4 +94,5 @@ tasks.withType<KotlinCompile> {
 companion object Version {
     const val GRPC = "1.47.0"
     const val PROTOBUF = "3.21.1"
+    const val GRPC_KT_STUB = "1.3.0"
 }
