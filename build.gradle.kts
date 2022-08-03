@@ -1,6 +1,5 @@
 import com.google.protobuf.gradle.generateProtoTasks
 import com.google.protobuf.gradle.id
-import com.google.protobuf.gradle.ofSourceSet
 import com.google.protobuf.gradle.plugins
 import com.google.protobuf.gradle.protobuf
 import com.google.protobuf.gradle.protoc
@@ -27,6 +26,9 @@ repositories {
 sourceSets {
     val main by getting { }
     main.java.srcDirs("build/generated/source/proto/main/java")
+    main.java.srcDirs("build/generated/source/proto/main/kotlin")
+    main.java.srcDirs("build/generated/source/proto/main/grpc")
+    main.java.srcDirs("build/generated/source/proto/main/grpckt")
 }
 
 dependencies {

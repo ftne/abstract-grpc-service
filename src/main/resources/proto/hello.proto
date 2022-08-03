@@ -4,7 +4,7 @@ package com.ftne.absys.grpc;
 
 option java_multiple_files = true;
 
-service AbstractGrpcService {
+service HelloService {
   rpc hello (HelloRequest) returns (HelloResponse) {}
 }
 
