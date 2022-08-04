@@ -14,13 +14,27 @@ buildscript {
 plugins {
     kotlin("jvm") version "1.7.10"
     id("com.google.protobuf") version "0.8.19"
+    `maven-publish`
 }
 
-group = "org.example"
+group = "com.ftne.absys"
 version = "1.0-SNAPSHOT"
 
 repositories {
+    mavenLocal()
     mavenCentral()
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = group.toString()
+            artifactId = "grpc-hello-api"
+            version = version
+
+            from(components["java"])
+        }
+    }
 }
 
 sourceSets {
